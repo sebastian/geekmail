@@ -15,14 +15,11 @@ Jeweler::Tasks.new do |gem|
   gem.name = "geekmail"
   gem.homepage = "http://github.com/sebastian/geekmail"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "sebastian@kle.io"
-  gem.authors = ["Sebastian"]
-  # Include your dependencies below. Runtime dependencies are required when using your gem,
-  # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
-  #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
-  #  gem.add_development_dependency 'rspec', '> 1.2.3'
+  gem.summary = "Gets the number of emails in your inbox for your IMAP server"
+  gem.description = "This is meant to be used with Geektool to display the number of emails in your inbox that you need to handle"
+  gem.email = "sebastian.probst.eide@gmail.com"
+  gem.authors = ["Sebastian Probst Eide"]
+	# gem.add_dependency "gem", "version"
 end
 Jeweler::RubygemsDotOrgTasks.new
 

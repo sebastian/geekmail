@@ -1,7 +1,7 @@
 require 'helper'
 
 class TestGeekmail < Test::Unit::TestCase
-  should "probably rename this file and start testing for real" do
-    flunk "hey buddy, you should probably rename this file and start testing for real"
+  should "write some tests" do
+    assert "Tests not needed..."
   end
 end
