@@ -21,11 +21,13 @@ Gem::Specification.new do |s|
   s.files = [
     ".document",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
     "VERSION",
     "bin/geekmail",
+    "geekmail.gemspec",
     "lib/geekmail.rb",
     "test/helper.rb",
     "test/test_geekmail.rb"
