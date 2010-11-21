@@ -5,11 +5,11 @@ Small ruby script that checks the count of emails in your IMAP inbox.
 For it to use, please add a config file called .geekmail.conf in your home directory.
 It should be a yaml file like this:
 
-config:
-  host: imap.gmail.com
-  port: 993
-  username: YOUR_EMAIL
-  password: YOUR_PASSWORD
+	config:
+	  host: imap.gmail.com
+	  port: 993
+	  username: YOUR_EMAIL
+	  password: YOUR_PASSWORD
 
 == Contributing to geekmail
  
