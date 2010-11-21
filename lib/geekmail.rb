@@ -42,6 +42,7 @@ class Geekmail
 		rescue Net::IMAP::ByeResponseError => e
 			"ByeResponseError #{e}"
 		rescue => e
+			"Unfortunate error..."
 		end
 	end
 end
