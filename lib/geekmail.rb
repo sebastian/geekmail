@@ -17,32 +17,34 @@ class Geekmail
 	
 	private
 	def self.check_mail(config)
-		begin
-		  # make a connection to imap account
-		  imap = Net::IMAP.new(config["host"], config["port"], true)
-		  imap.login(config["username"], config["password"])
-		  # select inbox as our mailbox to process
-		  imap.examine('Inbox')
+		tries = 5
+		while (tries > 0) do
 
-			number_of_message = 0
-		  # count number of emails
-		  imap.uid_search(["NOT", "DELETED"]).each do |uid|
-				number_of_message += 1
-		  end
+			begin
+			  # make a connection to imap account
+			  imap = Net::IMAP.new(config["host"], config["port"], true)
+			  imap.login(config["username"], config["password"])
+			  # select inbox as our mailbox to process
+			  imap.examine('Inbox')
 
-			# Log out
-		  imap.logout
-		  imap.disconnect
-		
-			number_of_message
+				number_of_message = 0
+			  # count number of emails
+			  imap.uid_search(["NOT", "DELETED"]).each do |uid|
+					number_of_message += 1
+			  end
 
-		# NoResponseError and ByResponseError happen often when imap'ing
-		rescue Net::IMAP::NoResponseError => e
-			"NoResponseError #{e}"
-		rescue Net::IMAP::ByeResponseError => e
-			"ByeResponseError #{e}"
-		rescue => e
-			"Unfortunate error..."
+				# Log out
+			  imap.logout
+			  imap.disconnect
+
+				return number_of_message
+
+			# NoResponseError and ByResponseError happen often when imap'ing
+			rescue => e
+				tries -= 1
+				sleep(1)
+				"Failed to get mail count" if (tries == 0)
+			end			
 		end
 	end
 end
