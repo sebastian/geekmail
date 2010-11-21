@@ -2,6 +2,12 @@
 
 Small ruby script that checks the count of emails in your IMAP inbox.
 
+To install, please run
+  gem install geekmail
+
+followed by adding a geek shell script like:
+  echo "`geekmail` unhandled emails"
+
 For it to use, please add a config file called .geekmail.conf in your home directory.
 It should be a yaml file like this:
 
