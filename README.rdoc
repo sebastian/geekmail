@@ -8,14 +8,20 @@ To install, please run
 followed by adding a geek shell script like:
   echo "`geekmail` unhandled emails"
 
-For it to use, please add a config file called .geekmail.conf in your home directory.
-It should be a yaml file like this:
+The script needs a configuration for your email server. Please add a ~/.geekmail.conf file (with correct permissions) that looks something like this:
 
 	config:
 	  host: imap.gmail.com
 	  port: 993
 	  username: YOUR_EMAIL
 	  password: YOUR_PASSWORD
+
+Troubleshooting tip:
+As geektools does not have the same value for $PATH as your shell, you might need to add some extra paths to your geektool shell command. In my case I also had to export the GEM_PATH. I ended up with the following command:
+  export GEM_PATH=/usr/local/Cellar/gems/1.8;
+  export PATH=$PATH:/usr/local/bin:/Users/seb/.gem/ruby/1.8/bin;
+  echo "`geekmail` unhandled emails"
+
 
 == Contributing to geekmail
  
