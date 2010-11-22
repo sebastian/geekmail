@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{geekmail}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Sebastian Probst Eide"]
-  s.date = %q{2010-11-21}
+  s.date = %q{2010-11-22}
   s.default_executable = %q{geekmail}
   s.description = %q{This is meant to be used with Geektool to display the number of emails in your inbox that you need to handle}
   s.email = %q{sebastian.probst.eide@gmail.com}
@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
     "VERSION",
     "bin/geekmail",
     "geekmail.gemspec",
+    "geektool setting.glet",
     "lib/geekmail.rb",
     "test/helper.rb",
     "test/test_geekmail.rb"
